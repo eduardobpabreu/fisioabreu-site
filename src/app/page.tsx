@@ -1,12 +1,16 @@
+'use client';
+
 import Image from "next/image";
 import Link from 'next/link';
 import { ImageCarousel } from '@/components/ImageCarousel';
+import { ScrollToTop } from '@/components/ScrollToTop';
 
 export default function Home() {
   return (
     <div>
+      <ScrollToTop />
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center">
+      <section className="relative min-h-[80vh] md:h-[60vh] flex items-center pt-20 md:pt-0">
         <Image
           src="/images/IMG_9867.jpg"
           alt="FisioAbreu - Clínica de Fisioterapia"
@@ -15,10 +19,10 @@ export default function Home() {
           priority
         />
         <div className="container relative z-10 text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-3xl">
             Excelência em fisioterapia e cuidados com a sua saúde
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl text-white/90">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl text-white/90">
             Tratamento personalizado com profissionais altamente qualificados para sua recuperação.
           </p>
           <Link href="http://linktr.ee/FisioAbreu" target="_blank" rel="noopener noreferrer" className="btn-primary">
@@ -31,7 +35,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="sobre" className="section bg-white pt-24">
+      <section id="sobre" className="section bg-white pt-28 md:pt-20">
         <div className="container">
           <h2 className="section-title text-[#017761]">Sobre Nós</h2>
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -63,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="especialidades" className="section bg-[#017761] pt-24">
+      <section id="especialidades" className="section bg-[#017761] pt-28 md:pt-20">
         <div className="container">
           <h2 className="section-title text-white">Especialidades</h2>
           <div className="grid md:grid-cols-4 gap-8">
@@ -127,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* Convênios Section */}
-      <section id="convenios" className="section bg-white pt-24">
+      <section id="convenios" className="section bg-white pt-28 md:pt-20">
         <div className="container">
           <h2 className="section-title text-[#017761]">Convênios</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
@@ -152,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="section bg-white pt-24">
+      <section className="section bg-white pt-28 md:pt-20">
         <div className="container">
           <h2 className="section-title text-[#017761]">Nossa Clínica</h2>
           <ImageCarousel
@@ -179,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="contato" className="section bg-[#017761] text-white pt-16 pb-16">
+      <section id="contato" className="section bg-[#017761] text-white pt-28 md:pt-20 pb-16">
         <div className="container">
           <h2 className="section-title text-white mb-6">Nossas Unidades</h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">

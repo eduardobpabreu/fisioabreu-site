@@ -33,20 +33,24 @@ export function Header() {
     const element = document.getElementById(id);
     
     if (element) {
-      // Obter a altura do cabeçalho fixo
-      const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+      // Fecha o menu primeiro
+      setIsMenuOpen(false);
       
-      // Calcular a posição com offset para o cabeçalho
-      const targetPosition = element.getBoundingClientRect().top + window.scrollY - headerHeight;
+      // Offset fixo de 80px para desktop e 100px para mobile
+      const isMobile = window.innerWidth < 768;
+      const offset = isMobile ? 100 : 80;
       
-      // Rolar até a posição ajustada
+      // Calcula a posição do elemento em relação ao topo da página
+      const elementTop = element.getBoundingClientRect().top + window.scrollY;
+      
+      // Rola até a posição do elemento menos o offset
       window.scrollTo({
-        top: targetPosition,
+        top: elementTop - offset,
         behavior: 'smooth'
       });
+    } else {
+      setIsMenuOpen(false);
     }
-    
-    setIsMenuOpen(false);
   }, []);
 
   return (
