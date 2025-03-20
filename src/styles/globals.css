@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #017761;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-800;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  .section {
+    @apply py-16;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors;
+  }
+
+  .card {
+    @apply bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/30 hover:border-2 hover:-translate-y-1;
+  }
+} 
